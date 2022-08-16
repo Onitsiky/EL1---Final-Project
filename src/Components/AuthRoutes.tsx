@@ -1,7 +1,35 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {useNavigate} from "react-router-dom";
+import {app} from "./Firebase_config/Config";
 
-export interface IAuthRoutesProps {};
+const AuthRoutes : React.FC<any> = (props) => {
+    const { children } = props;
+    const auth = getAuth(app);
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
-const AuthRoutes : React.FC<IAuthRoutesProps> = (props) => {
+    useEffect(()=> {
+        AuthCheck();
+        return () => AuthCheck();
+    },[auth])
 
+    const AuthCheck = onAuthStateChanged(auth, (user) => {
+        if(user){
+            setLoading(false);
+        }
+        else {
+            console.log("Unauthorized !");
+            setLoading(true);
+            navigate("/login");
+        }
+    })
+    if (loading) return <p>Loading ...</p>
+
+    return(
+        <>
+            {children}
+        </>
+    )
 }
+export default AuthRoutes;
