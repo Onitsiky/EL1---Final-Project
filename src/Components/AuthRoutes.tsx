@@ -17,11 +17,13 @@ const AuthRoutes : React.FC<any> = (props) => {
     const AuthCheck = onAuthStateChanged(auth, (user) => {
         if(user){
             setLoading(false);
+            navigate("/");
         }
         else {
+            navigate("/login");
             console.log("Unauthorized !");
             setLoading(true);
-            navigate("/login");
+
         }
     })
     if (loading) return <p>Loading ...</p>

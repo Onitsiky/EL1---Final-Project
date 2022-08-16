@@ -4,6 +4,7 @@ import "./App.css";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import AuthRoutes from "./Components/AuthRoutes";
 import HomePage from "./Components/HomePage";
+import Register from "./Components/Register";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
               <Route index element={<AuthRoutes>
                  <HomePage/>
               </AuthRoutes>}/>
+              <Route path="/register" element={<Register/>}/>
           </Routes>
       </Router>
   );
