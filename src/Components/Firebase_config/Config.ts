@@ -6,7 +6,7 @@ const Config = {
         authDomain: "rulesbreakers-fb266.firebaseapp.com",
         projectId: "rulesbreakers-fb266",
         storageBucket: "rulesbreakers-fb266.appspot.com",
-        messagingSenderId: "372706870275",
+        messagingSenderId: "3  72706870275",
         appId: "1:372706870275:web:744e39e75adf03fc783a36",
         measurementId: "G-G7Q6W6B3HJ"
 
