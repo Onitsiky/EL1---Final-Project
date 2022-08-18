@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {getAuth, onAuthStateChanged} from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 import {app} from "./Firebase_config/Config";
+import "./main.css"
 
 const AuthRoutes : React.FC<any> = (props) => {
     const { children } = props;
@@ -20,13 +21,14 @@ const AuthRoutes : React.FC<any> = (props) => {
             navigate("/");
         }
         else {
+            setLoading(true);
             navigate("/login");
             console.log("Unauthorized !");
-            setLoading(true);
+
 
         }
     })
-    if (loading) return <p>Loading ...</p>
+    if (loading) return (<p>Loading ...</p>);
 
     return(
         <>

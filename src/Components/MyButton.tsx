@@ -1,15 +1,15 @@
 type IMyButton= {
     label: string,
-    disable?: boolean,
     children?: React.ReactNode,
-    handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+    handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
+    handleClass?: string
 }
 
 const MyButton : React.FC<IMyButton> = (props) => {
-    const { label, children, disable, handleClick } = props;
+    const { label, children, handleClick, handleClass} = props;
     return(
         <div className="container my-button mb-3 text-center">
-            <button type="submit" className="btn btn-light col-md-6 col-sm-12" onClick={handleClick} disabled={disable}>
+            <button type="submit" className={handleClass} onClick={handleClick} >
                     {children}
                     {" " + label}
             </button>

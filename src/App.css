@@ -4,8 +4,10 @@
 .login{
     overflow: hidden;
     border-radius: 1%;
-    top: 15%;
     background-color: rgba(187, 161, 91, 0.644);
+}
+.one{
+    top: 15%;
 }
 *{
     font-size: small;

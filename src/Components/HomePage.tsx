@@ -6,7 +6,9 @@ const HomePage : React.FC = () => {
     const auth = getAuth(app);
     return(
         <div>
-            <h1 className="text-light">Home Page</h1>
+            <h1 className="text-light">
+                HELLO
+            </h1>
             <MyButton label="Sign out" handleClick={() => signOut(auth)}/>
         </div>
     )

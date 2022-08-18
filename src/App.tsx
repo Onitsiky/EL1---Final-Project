@@ -8,17 +8,19 @@ import Register from "./Components/Register";
 
 function App() {
   return (
-      <Router>
-          <Routes>
-              <Route path="/login" element={<div className=" d-flex justify-content-center">
-                  <Main/>
-              </div>}/>
-              <Route index element={<AuthRoutes>
-                 <HomePage/>
-              </AuthRoutes>}/>
-              <Route path="/register" element={<Register/>}/>
-          </Routes>
-      </Router>
+      <div className="body">
+          <Router>
+              <Routes>
+                  <Route path="/login" element={<div className=" d-flex justify-content-center">
+                      <Main/>
+                  </div>}/>
+                  <Route index element={<AuthRoutes>
+                      <HomePage/>
+                  </AuthRoutes>}/>
+                  <Route path="/register" element={<Register/>}/>
+              </Routes>
+          </Router>
+      </div>
   );
 }
 
